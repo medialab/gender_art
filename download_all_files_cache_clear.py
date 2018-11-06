@@ -99,8 +99,8 @@ with  requests_cache.CachedSession() as s:
     
     
     # number of documents to download
-    #total = response['totalCount']
-    total = 11000
+    total = response['totalCount']
+    
     
     
     if type(total) is not int:
