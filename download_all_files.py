@@ -2,7 +2,7 @@
 """
 Created on Wed Oct 24 12:07:38 2018
 
-@author: ruta binkyte
+@author: ruta binkyte, Paul Girard
 """
 
 
@@ -11,6 +11,7 @@ from requests.adapters import HTTPAdapter
 import requests_cache
 import config
 import datetime 
+import os
 
 # a function to calculate time remaining to download
 def remaining_time(total, start_time, now, doc_num) :  
@@ -34,10 +35,8 @@ def remaining_time(total, start_time, now, doc_num) :
         
     return time_left
 
-
-
 with  requests_cache.CachedSession() as s:
-    
+
     
     # logins from config file 
     SERVERROOT= config.SERVERROOT
@@ -132,27 +131,30 @@ with  requests_cache.CachedSession() as s:
         # name for the document indicating number of files it contains   
         start = i*size
         end = start+size-1
-        name = str(start) + '-' + str(end) + '.json'
+        name = os.path.join('data',str(start) + '-' + str(end) + '.json')
         
 
         url = "%s/%s/artworks?size=%s&from=%s&sort=source.artwork.order_default.keyword:asc" % (SERVERROOT, VAULT, size, start)
         s.mount(url, HTTPAdapter(max_retries=5))
         
         print('The URL is: ' + url + '\n')
-        
+
         #Check if connection is ok
-        response = s.head(url, headers = headers, json = login_data)
-        response.raise_for_status()
-        
-        
         response = s.get(url, headers = headers, json = login_data)
-        
-        response = response.json()
-        
-        
-        with open(name, 'w') as outfile: 
-            
-            json.dump(response, outfile, ensure_ascii = True)
+        if not response.from_cache:
+            try:
+                response.raise_for_status()    
+                response = response.json()
+                
+                
+                with open(name, 'w') as outfile: 
+                    
+                    json.dump(response, outfile, ensure_ascii = False, indent = 2)
+            except Exception as e :
+                print(e)
+        else :
+            print('Retrieved from cache')    
+
         
         
     
