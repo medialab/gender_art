@@ -35,7 +35,7 @@ def remaining_time(total, start_time, now, doc_num) :
         
     return time_left
 
-clear = False
+clear = True
 
 if clear == True:
     os.remove("cache.sqlite")
@@ -153,8 +153,7 @@ with  requests_cache.CachedSession() as s:
                 response = response.json()
                 
                 
-                with open(name, 'w') as outfile: 
-                    
+                with open(name, 'w', encoding='utf8') as outfile: 
                     json.dump(response, outfile, ensure_ascii = False, indent = 2)
             except Exception as e :
                 print(e)
