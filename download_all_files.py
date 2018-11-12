@@ -12,6 +12,7 @@ import requests_cache
 import config
 import datetime 
 import os
+import re
 
 # a function to calculate time remaining to download
 def remaining_time(total, start_time, now, doc_num) :  
@@ -34,6 +35,16 @@ def remaining_time(total, start_time, now, doc_num) :
         time_left = str(time_left) + ' seconds' + '\n'
         
     return time_left
+
+def get_list_from_html(field):
+    regex_item = re.compile('<li>(.*?)<\/li>', flags=re.S)
+    tab = regex_item.split(field)
+    new_tab = []
+    for item in tab:
+        if len(item) > 0 and 'ul>' not in item and item != '\n':
+            new_tab.append(item)
+    return new_tab
+
 
 clear = True
 
@@ -151,7 +162,12 @@ with  requests_cache.CachedSession() as s:
             try:
                 response.raise_for_status()    
                 response = response.json()
-                
+
+                for artwork in response['results']:
+                    for key, value in artwork['_source']['ua']['artwork'].items():
+                        if type(value) == str and '<ul>' in value:
+
+                            artwork['_source']['ua']['artwork'][key] = get_list_from_html(value)
                 
                 with open(name, 'w', encoding='utf8') as outfile: 
                     json.dump(response, outfile, ensure_ascii = False, indent = 2)
