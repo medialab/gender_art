@@ -1,4 +1,4 @@
 config.py
-data/*
+data/*.json
 __pycache__
 cache.sqlite
