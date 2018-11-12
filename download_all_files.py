@@ -35,6 +35,12 @@ def remaining_time(total, start_time, now, doc_num) :
         
     return time_left
 
+clear = False
+
+if clear == True:
+    os.remove("cache.sqlite")
+    print('Cache is cleared')
+
 with  requests_cache.CachedSession() as s:
 
     
