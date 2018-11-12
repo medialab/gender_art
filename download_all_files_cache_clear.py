@@ -157,7 +157,7 @@ with  requests_cache.CachedSession() as s:
                 
                 with open(name, 'w') as outfile: 
                     
-                    json.dump(response, outfile, ensure_ascii = False, indent = 2)
+                    json.dump(response, outfile, ensure_ascii = True, indent = 2)
             except Exception as e :
                 print(e)
         else :
