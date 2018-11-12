@@ -26,9 +26,10 @@ if __name__ == '__main__':
     for filename in os.listdir(sourceDir):
     #for subrep in arbre:
     #    for filename in subrep[2]:
+	# encoding="utf8" and ensure_ascii = False added by Ruta Binkyte 
             try:
-                with open(sourceDir+filename) as src_jsonfile:
-                    with open(destDir+os.path.basename(filename), 'w') as dest_jsonfile:
+                with open(sourceDir+filename, encoding="utf8") as src_jsonfile:
+                    with open(destDir+os.path.basename(filename), 'w',encoding="utf8") as dest_jsonfile:
                         results = json.load(src_jsonfile)["results"]
                         for artwork in results:
                             for key, value in artwork['_source']['ua']['artwork'].items():
@@ -36,6 +37,6 @@ if __name__ == '__main__':
                                 #print(field)
                                 if type(value) == str and '<ul>' in value:
                         	        artwork['_source']['ua']['artwork'][key] = get_list_from_html(value)
-                        dest_jsonfile.write(json.dumps(results))
+                        dest_jsonfile.write(json.dumps(results, ensure_ascii = False))
             except Exception as e:
                 print("ERROR: can not read results from json data %s ; skipping file:\n%s: %s" % (src_jsonfile, type(e), e))
