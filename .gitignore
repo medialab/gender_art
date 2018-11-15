@@ -2,3 +2,4 @@ config.py
 data/*.json
 __pycache__
 cache.sqlite
+node_modules

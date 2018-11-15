@@ -5,12 +5,39 @@ Add some description here...
 
 # Configuration
 
-copy the config.example.sh to add your config to API
-
 ```bash
-$cp config.example.sh  config.sh
-$vi config.sh 
+$cp config.example.py  config.py
+$vi config.py 
 ```
 
 # requirements
 
+- python 3
+- node > 7
+- [docker-compose](https://docs.docker.com/compose/install/)
+
+```bash
+$pip install -r requirements.txt
+$npm i
+```
+
+# instructions  
+
+First we download the data to json files :
+
+```bash
+$python download_all_files.py 
+```
+
+Make sure you have a mongo database running on http://localhost:27017
+You can use docker for that :
+
+```bash
+$docker-compose up 
+```
+
+Then we insert the data into a mongodb
+
+```bash
+$node dataToMongo-splitfiles.js 
+```
