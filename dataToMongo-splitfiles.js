@@ -5,7 +5,9 @@ var MongoClient = require('mongodb').MongoClient;
 var filesystem = require('fs');
 
 var index = 0; // control index
+//var url = 'mongodb://root:rutabaga@localhost:27017';//mnam changed to VideoMuseum by Ruta
 var url = 'mongodb://localhost:27017/VideoMuseum';//mnam changed to VideoMuseum by Ruta
+
 
 var duplicate_count = 0;
 //var objectsToProcess = []; // list of json objects to process
@@ -14,7 +16,7 @@ var AUTHOR_COLLECTION = 'Author';
 var ARTWORK_COLLECTION = 'Artwork';
 var MEDIA_COLLECTION = 'Media';
 
-var jsonList = filesystem.readdirSync('./data_cleaned');
+var jsonList = filesystem.readdirSync('./data').filter(f => f.indexOf('json')!==-1);
 
 
 //40553 duplicates
@@ -42,7 +44,7 @@ function insertMedias(artwork, db, callback) {
  * Format and insert an artwork's array of authors objects in authors mongo collection
  */
 function insertAuthors(artwork, db, callback) {
-   // console.log(artwork);
+    //console.log(artwork);
     var authors = artwork._source.ua.authors;
     if( authors && authors.length===1){
         authors[0].authors_birth_death = artwork._source.ua.artwork.authors_birth_death
@@ -94,7 +96,7 @@ function insertArtwork(artwork, db, callback) {
     	// not catching errors because possible dupkeys that we don't care about
     	if (err != null) {
     		duplicate_count++;
-    		console.log(artworkSimplified._id);
+    		//console.log(artworkSimplified._id);
     	}
     	callback(null);
     });
@@ -139,6 +141,11 @@ function dataToMongo() {
             console.log('connecting to db');
             MongoClient.connect(url, callback);
         },
+        // create the database
+        function(c, callback){
+            console.log('connected', c.isConnected());
+            callback(null, c.db('VideoMuseum'));
+        },
         function(db, callback) {
         	//db_co = db;
             // chaining the two collections creation operations
@@ -180,8 +187,8 @@ function dataToMongo() {
             	function(file, nestedCallback) {
             		var smallTab = []
             		console.log('parsing '+file);
-            		oboe(fs.createReadStream('./data_cleaned/'+file))
-                	.node('![*]',
+            		oboe(fs.createReadStream('./data/'+file))
+                	.node('results.*',
                 	function(node) {
                 	    smallTab.push(node);
                 	}
@@ -211,7 +218,7 @@ function dataToMongo() {
     ], function(err, db) {
     	console.log(duplicate_count+' duplicates found');
         console.log('done with everything, closing db');
-        db.close();
+        //db.close();
     });
 }
 
