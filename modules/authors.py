@@ -46,17 +46,17 @@ for author in authors:
     author['name.notice']= author["name"]["notice"]
     del author["name"]
 
-# df = pd.DataFrame(authors)
-# print(list(df.columns.values))
-# df.columns = [headers[c] for c in df.columns.values]
+df = pd.DataFrame(authors)
+print(list(df.columns.values))
+df.columns = [headers[c] for c in df.columns.values]
 # print(list(headers.values()))
-# df = df[list(headers.values())]
-# df.to_csv("authors.csv", encoding = "utf-8", sep = ";", index = False)
+df = df[list(headers.values())]
+df.to_csv("authors.csv", encoding = "utf-8", sep = ";", index = False)
 
 
-# Added encoding='utf-8' by ruta
-with open("authors.csv", "w", encoding='utf-8') as f:
-    authors_csv = csvkit.DictWriter(f,fieldnames = headers.values())
-    authors_csv.writeheader()
-    # setting human readable column names
-    authors_csv.writerows(( { headers[k]:v for k,v in author.items()} for author in authors))
+# # Added encoding='utf-8' by ruta
+# with open("authors.csv", "w", encoding='utf-8') as f:
+#     authors_csv = csvkit.DictWriter(f,fieldnames = headers.values())
+#     authors_csv.writeheader()
+#     # setting human readable column names
+#     authors_csv.writerows(( { headers[k]:v for k,v in author.items()} for author in authors))
