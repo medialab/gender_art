@@ -6,7 +6,7 @@ var filesystem = require('fs');
 
 var index = 0; // control index
 //var url = 'mongodb://root:rutabaga@localhost:27017';//mnam changed to VideoMuseum by Ruta
-var url = 'mongodb://localhost:27017/VideoMuseum';//mnam changed to VideoMuseum by Ruta
+var url = 'mongodb://localhost:27017';//mnam changed to VideoMuseum by Ruta
 
 
 var duplicate_count = 0;
