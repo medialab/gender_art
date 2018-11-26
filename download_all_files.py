@@ -46,7 +46,7 @@ def get_list_from_html(field):
     return new_tab
 
 
-clear = True
+clear = False
 
 if clear == True:
     os.remove("cache.sqlite")
@@ -127,7 +127,7 @@ with  requests_cache.CachedSession() as s:
     page = 10
     
     
-    for i in range(int(total/size)): 
+    for i in range(int(total/size)+1): 
         
         print(i)
         print(page)
@@ -148,6 +148,8 @@ with  requests_cache.CachedSession() as s:
         # name for the document indicating number of files it contains   
         start = i*size
         end = start+size-1
+        if i == int(total/size):
+            end = total
         name = os.path.join('data',str(start) + '-' + str(end) + '.json')
         
 
