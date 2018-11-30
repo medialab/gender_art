@@ -68,7 +68,7 @@ print(list(df.columns.values))
 df.columns = [headers[c] for c in df.columns.values]
 # print(list(headers.values()))
 df = df[list(headers.values())]
-df.to_csv("authors.csv", encoding = "utf-8", sep = ";", index = False)
+df.to_csv("authors_all.csv", encoding = "utf-8", sep = ";", index = False)
 
 
 # # Added encoding='utf-8' by ruta
