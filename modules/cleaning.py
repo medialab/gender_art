@@ -116,7 +116,8 @@ acquisition_mode_aggregation = {"Achat":"Achat",
 "Saisie":"Saisie"}
 
 def acquisition_mode_cleaning(acquisition_mode):
-    return acquisition_mode_aggregation[acquisition_mode.strip(' ')]
+    am = acquisition_mode.strip(' ')
+    return acquisition_mode_aggregation[am] if am in acquisition_mode_aggregation else am
 
 #### BIRTH DEATH PLACE AND YEAR
 birthdeath_re = re.compile(r"(?: - )?([\w\- ]*) \((?:([\w\- ]*)?, )?([\w\- ]*)\), (\d{4})", flags = re.U)

@@ -21,7 +21,9 @@ headers = {
 'deathCountry':'Death country',
 'gender':'Gender',
 'nationality':'Nationality (original)',
-'artworks':'ID artworks'
+'artworks':'ID artworks',
+'average_year': 'average_year',
+'creation_years': 'artworks_creation_years'
 }
 
 project = {
@@ -37,11 +39,26 @@ project = {
 # unique arworks
 authors = list(db.Author.aggregate([{"$project":project}]))
 
+artwork_creation_date = {str(a['_id']):a['date_creation'] for a in db.Artwork.aggregate([{"$match":{'date_creation':{'$exists':'true'}}},
+{"$project":{"date_creation":1}}])}
+
 for author in authors:
     # cleaning acquisition mode
     if 'authors_birth_death' in author:
        author.update(cleaning.artist_birthdeath_parsing(author['authors_birth_death']))
        del author['authors_birth_death']
+    try:
+        years = [int(y) for id in author['artworks'] for y in cleaning.years_re.findall(artwork_creation_date[str(id)])]
+    except KeyError as e :
+        # no creation date could be retrieved
+        years = []
+    author['creation_years'] = '|'.join([str(y) for y in years])
+    if 'birthYear' in author and author['birthYear']:
+        years.append(int(author['birthYear']))
+    if 'deathYear' in author and author['deathYear']:
+        years.append(int(author['deathYear']))
+    author['average_year'] = int(sum(years)/len(years)) if len(years)>0 else None
+
     author['artworks'] = '|'.join(author['artworks'])
     author['name.notice']= author["name"]["notice"]
     del author["name"]

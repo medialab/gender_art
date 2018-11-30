@@ -7,6 +7,7 @@ db = pymongo.MongoClient("localhost", 27017)["VideoMuseum"]
 
 headers = {
 '_id':'Id artwork',
+'type':'artwork type',
 'authors':'Id artists',
 'title_notice':'Title',
 'domain':'Domaine',
@@ -26,7 +27,8 @@ project = {
     'acquisition_mode':1,
     'acquisition':1,
     'acquisition_year':1,
-    'date_creation':1
+    'date_creation':1,
+    'type':1
 }
 
 # unique arworks
@@ -36,7 +38,7 @@ unique_artworks = db.Artwork.aggregate([
     ])
 separable_artworks_groups = db.Artwork.aggregate([
     {"$match": {"type":'separable'}},
-    {'$group': dict( [('_id','ensemble_id')] + [(k,{'$first':'$%s'%k}) for k,v in project.items()])},
+    {'$group': dict( [('_id','$ensemble_id')] + [(k,{'$first':'$%s'%k}) for k,v in project.items()])},
     {"$project":project}
     ])
 
