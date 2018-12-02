@@ -41,6 +41,9 @@ acquisition_mode_aggregation = {"Achat":"Achat",
 'Attribution Centre national des arts plastiques':"Attribution", #added by Ruta Binkyte
 "Attribution Etat":"Attribution", 
 "Attribution Ministère de l'économie, des finances et de l'industrie":"Attribution", #added by Ruta Binkyte
+'Attribution Ministère des Affaires étrangères et du Développement international':"Attribution", #added by Ruta Binkyte
+'Attribution Ministère de la culture et de la communication':"Attribution", #added by Ruta Binkyte
+"Attribution Direction de l'Urbanisme":"Attribution", #added by Ruta Binkyte
 "Attribution Fonds national d'art contemporain":"Attribution",
 "Attribution":"Attribution",
 "Attribution par l'office des Biens et Intérêts Privés":"Attribution",
@@ -52,6 +55,7 @@ acquisition_mode_aggregation = {"Achat":"Achat",
 "Attribution Réunion des Musées Nationaux":"Attribution",
 "Attribution Les Arts Décoratifs":"Attribution",
 "Attribution Mobilier national et Manufactures des Gobelins, de Beauvais et de la Savonnerie":"Attribution",
+'Attribution Petit Palais - Musée des Beaux-Arts de la Ville de Paris':"Attribution",  #added by Ruta Binkyte
 "Commande publique":"Commande publique", #added by Ruta Binkyte
 "Commande publique par commande":"Commande publique", #added by Ruta Binkyte
 "Mode d'acquisition non renseigné par commande":"Mode d'acquisition non renseigné par commande", #added by Ruta Binkyte
@@ -72,6 +76,34 @@ acquisition_mode_aggregation = {"Achat":"Achat",
 "Dépôt Siège national du Parti communiste français":"Dépôt entrant",
 "Dépôt Association française d'action artistique": "Dépôt entrant",
 "Dépôt Musée des Beaux-Arts de Nantes": "Dépôt entrant", #added by Ruta Binkyte
+"Dépôt Musée d'art et d'industrie": "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Musée alsacien': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Nouveau Musée': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Gilles Lewalle': "Dépôt entrant",#added by Ruta Binkyte
+"Dépôt Musée régional d'ethnologie": "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Musée des Beaux-Arts de Dunkerque': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt les Abattoirs, Musée - Frac Occitanie Toulouse': "Dépôt entrant",#added by Ruta Binkyte
+"Dépôt Mairie de Villeneuve-d'Ascq": "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Musée national de la Céramique': "Dépôt entrant",#added by Ruta Binkyte
+"Dépôt Le Consortium Centre d'art contemporain": "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Claire Durand-Ruel': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Cabinet du Maire': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Fédération Wallonie-Bruxelles':'Dépôt Fédération Wallonie-Bruxelles',#added by Ruta Binkyte
+'Dépôt Musée du Luxembourg': "Dépôt entrant",#added by Ruta Binkyte
+"Dépôt Mobilier national d'Alsace-Lorraine": "Dépôt entrant",#added by Ruta Binkyte
+"Dépôt Fondation Camille Bryen sous l'égide de la Fondation de France": "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Petit Palais - Musée des Beaux-Arts de la Ville de Paris': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Jean Mairet': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt DENNEY Anthony et Célia': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Maître Guy Loudmer': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Haim Chanin Fine Arts Gallery': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Mme Marie Houzelle': "Dépôt entrant",#added by Ruta Binkyte
+"Dépôt Lab'Bel, Fonds Culturel et artistique du Groupe Bel": "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Centre Pompidou, MNAM-CCI': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Kadist Art Foundation': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Bibliothèque municipale Guy de Maupassant': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt GARCIA Dora': "Dépôt entrant",#added by Ruta Binkyte
+'Dépôt Noël Le Gall': "Dépôt entrant",#added by Ruta Binkyte
 "Don":"Don",
 "Donation":"Donation",
 "Echange":"Echange",
@@ -79,6 +111,7 @@ acquisition_mode_aggregation = {"Achat":"Achat",
 "Legs":"Legs",
 "Mode d'acquisition mixte, voir détail sur les éléments":"Mode d'acquisition mixte",
 "Mode d'acquisition non renseigné":"Mode d'acquisition non renseigné",
+'Remplacement après sinistre':'Remplacement après sinistre', #added by Ruta Binkyte
 "Saisie de l'Administration des Douanes":"Saisie",
 "Saisie":"Saisie"}
 
