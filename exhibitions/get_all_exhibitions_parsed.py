@@ -70,7 +70,7 @@ def get_expo_place_time(placeTimeList):
     """From a placeTimeList (aka 'other' field from get_expo_title_other),
     extract a list of places and times.
     Returns a list of {'place':`string`, 'time':`string`}.
-    /!\\ Elements splitting is distinct from place_time matching, therefore
+    /!\ Elements splitting is distinct from place_time matching, therefore
     some elements in the list can be None (no match at all). Also, keep in mind
     that this is partial matching (ie place or time can be '')"""
     regex_place_time = re.compile(r'(?:(.*)(?:,\s+|\s+:\s+))?(.*[0-9]{4})?')
@@ -163,7 +163,8 @@ def extract_expositions(json, csvwriter):
                         #
                     else:
                         time = ''
-                csvwriter.writerow([item, title, place, museum, town, time, start_date, end_date, artworks])
+                if re.search(r'(199[0-9]|20[0-9][0-9])', time) != None:
+                    csvwriter.writerow([item, title, place, museum, town, time, start_date, end_date, artworks])
 
 
 def main():
@@ -189,7 +190,7 @@ def main():
     exhibitions = [{'expositions': [i], 'artworks': all_exhibitions[i]} for i in all_exhibitions]
     print("Total number of exhibitions:", len(exhibitions))
     i = 0
-    with open("output.csv", "w", newline='', encoding='utf-8') as f:
+    with open("../data/output.csv", "w", newline='', encoding='utf-8') as f:
         writer = csv.writer(f, delimiter=';')
         writer.writerow(["exhibition", "title", "place", "museum", "town", "time", "start_date", "end_date", "artworks"])
         for json in exhibitions:
