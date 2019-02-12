@@ -134,8 +134,9 @@ def extract_expositions(json, csvwriter):
         item = _item.replace("\n", " ").replace("  ", " ")
         m = get_expo_title_other(item)
         if m is None:
-            csvwriter.writerow([item, '', '', '','', '', '', '', artworks])
-            #unmatched_num += 1
+            if re.search(r'(199[0-9]|20[0-9][0-9])', item) != None:
+                csvwriter.writerow([item, '', '', '','', '', '', '', artworks])
+            # unmatched_num += 1
         else:
             title = m['title']
             other = m['other']
@@ -165,6 +166,7 @@ def extract_expositions(json, csvwriter):
                         time = ''
                 if re.search(r'(199[0-9]|20[0-9][0-9])', time) != None:
                     csvwriter.writerow([item, title, place, museum, town, time, start_date, end_date, artworks])
+
 
 
 def main():

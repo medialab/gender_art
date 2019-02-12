@@ -1,5 +1,11 @@
 # Modules overview
 
+## get_all_artworks.py
+
+Type: runable script
+
+Outputs the list of all artworks, from the MongoDB, to a .csv file (in ../data)
+
 ## get_html_list.py
 
 Type: reusable module
