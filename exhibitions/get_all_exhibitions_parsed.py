@@ -13,6 +13,7 @@ def extract_date(date_field):
     month2number = ('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre')
     abbr2number = ('janv', 'fév', 'mars', 'avril', 'mai', 'juin', 'juil', 'août', 'sept', 'oct' 'nov', 'déc')
     m = regex_date.match(date_field)
+    m1 = regex_date_fallback.match(date_field)
     if m:
         end_year = m.group(6)
         end_month = '00'
@@ -35,12 +36,10 @@ def extract_date(date_field):
         start_month = start_month if len(start_month) > 1 else '0'+start_month
         #print(start_year+'-'+start_month+'-'+start_day, end_year+'-'+end_month+'-'+end_day)
         return [[start_year, start_month, start_day], [end_year, end_month, end_day]]
+    elif m1:
+        return [[m1.group(1), '00', '00'], [m1.group(1), '00', '00']]
     else:
-        m = regex_date_fallback.match(date_field)
-        if m:
-            return [[m.group(1), '00', '00'], [m.group(1), '00', '00']]
-        else:
-            return None
+        return None
 
 def get_list_from_html(field):
     """Convert an html list into a python list."""
@@ -63,8 +62,7 @@ def get_expo_title_other(record):
         m = regex_title_other_fallback.match(record)
     if m is None:
         return None
-    return {'title':m.group(1).strip() if m.group(1) is not None else None,\
-    'other':m.group(2).strip() if m.group(2) is not None else None}
+    return {'title':m.group(1).strip() if m.group(1) is not None else None, 'other':m.group(2).strip() if m.group(2) is not None else None}
 
 def get_expo_place_time(placeTimeList):
     """From a placeTimeList (aka 'other' field from get_expo_title_other),
@@ -135,6 +133,7 @@ def extract_expositions(json, csvwriter):
         m = get_expo_title_other(item)
         if m is None:
             if re.search(r'(199[0-9]|20[0-9][0-9])', item) != None:
+                # print(item)
                 csvwriter.writerow([item, '', '', '','', '', '', '', artworks])
             # unmatched_num += 1
         else:
@@ -153,8 +152,7 @@ def extract_expositions(json, csvwriter):
                         if town_museum is not None:
                             museum = town_museum['museum']
                             town = town_museum['town']
-                    #else:
-                    #    place = ''
+
                     if time is not None:
                         tab = extract_date(time)
                         if tab is not None:
@@ -179,8 +177,8 @@ def main():
     all_exhibitions = {}
     i = 0
     for doc in all_artworks:
-        if i % 10000 == 0:
-            print("Finding exhibitions in artworks", i,"to", min([i + 1000 - 1, n]))
+        if i % 100000 == 0:
+            print("Finding exhibitions in artworks", i,"to", min([i + 100000, n]))
         if "expositions" in doc:
             for _exhibition in doc["expositions"]:
                 exhibition = _exhibition.replace("\n", " ").replace("  ", " ")
@@ -192,15 +190,19 @@ def main():
     exhibitions = [{'expositions': [i], 'artworks': all_exhibitions[i]} for i in all_exhibitions]
     print("Total number of exhibitions:", len(exhibitions))
     i = 0
+    j = 0
     with open("../data/output.csv", "w", newline='', encoding='utf-8') as f:
         writer = csv.writer(f, delimiter=';')
         writer.writerow(["exhibition", "title", "place", "museum", "town", "time", "start_date", "end_date", "artworks"])
         for json in exhibitions:
-            if i % 1000 == 0:
-                print("Parsing exhibition", i+1,"to", min([i + 1000 - 1, n]))
+            if i % 10000 == 0:
+                print("Parsing exhibition", i+1,"to", min([i + 10000, n]))
             i += 1
             extract_expositions(json, writer)
+            if len(json['artworks'].split(" | ")) > 1:
+                j += 1
     print("Done")
+    print("Non singleton exhib:", j)
     all_artworks.close()
 
 
