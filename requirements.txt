@@ -1,5 +1,0 @@
-requests
-requests_cache
-pymongo
-csvkit
-pandas
