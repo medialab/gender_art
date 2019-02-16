@@ -4,3 +4,4 @@ __pycache__
 cache.sqlite
 node_modules
 *.csv
+visualisation/figures/*
