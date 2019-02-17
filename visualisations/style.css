@@ -49,10 +49,10 @@ li{
   box-sizing: border-box;
 }
 .column:first-of-type .cell{
-  border-right: 1px dashed black;
+  border-right: 1px dashed darkgray;
 }
 .cell:not(:last-of-type){
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed darkgray;
 }
 
 .cell img{
@@ -63,8 +63,8 @@ li{
 }
 .cartel-content{
   box-sizing: border-box;
-  padding: 1rem;
-  padding-left: 0;
+  padding: 5rem;
+  /* padding-left: 0; */
 }
 .cartel-content h1{
   font-size: 1.1rem;
@@ -83,13 +83,15 @@ li{
   margin-bottom: 1rem;
 }
 .cartel-content .legend-item{
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: stretch;
+  font-size: .7rem;
+  margin-right: .1rem;
 }
 .cartel-content .legend-item .legend-bullet{
-  min-width: 1.1rem;
+  min-width: 1rem;
   min-height: 1rem;
   border-radius : 50%;
   background: red;
@@ -101,9 +103,19 @@ li{
 .cartel-content .legend-item.women .legend-bullet{
   background: #4169e1;
 }
-.cartel-content .legend-item em{
-  flex: 1;
+.cartel-content .legend-item.men div{
+  /* flex: 1; */
+  background: #ffd700;
+  padding: .1rem .2rem .1rem .2rem;
+  color: white;
 }
+.cartel-content .legend-item.women div{
+  /* flex: 1; */
+  background: #4169e1;
+  padding: .1rem .2rem .1rem .2rem;
+  color: white;
+}
+
 @page{
   margin: 0;
 }

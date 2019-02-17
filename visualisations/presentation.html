@@ -2,120 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rapport art & genre</title>
+  <title>Rapport Art & Genre</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <meta charset="utf-8"/>
-  <style>
-  body{
-  min-height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  min-width: 100%;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-}
-ul{
-  padding: 0;
-}
-li{
-  list-style-type: none;
-  margin: 0;
-}
-.page{
-  position: relative;
-  page-break-inside: avoid;
-  width: 100%;
-  min-width: 100%;
-  height: 100vh;
-  min-height: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: stretch;
-}
-.column{
-  flex: 1;
-  max-width: 50%;
-  max-height: 50%;
-  max-height: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: stretch;
-}
-.cell{
-  flex: 1;
-  min-width: 100%;
-  max-width: 100%;
-  min-height: 33.333333%;
-  max-height: 33.333334%;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-.column:first-of-type .cell{
-  border-right: 1px dashed black;
-}
-.cell:not(:last-of-type){
-  border-bottom: 1px dashed black;
-}
-
-.cell img{
-  max-width: 100%;
-}
-.cell-cartel{
-  justify-content: flex-start;
-}
-.cartel-content{
-  box-sizing: border-box;
-  padding: 1rem;
-  padding-left: 0;
-}
-.cartel-content h1{
-  font-size: 1.1rem;
-}
-.figure-title{
-  font-size: .8rem;
-  padding: 1rem;
-  padding-left: 2rem;
-  padding-bottom: 0;
-}
-.cartel-content li{
-  font-size: .8rem;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: stretch;
-  margin-bottom: 1rem;
-}
-.cartel-content .legend-item{
-  flex: 1;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: stretch;
-}
-.cartel-content .legend-item .legend-bullet{
-  min-width: 1.1rem;
-  min-height: 1rem;
-  border-radius : 50%;
-  background: red;
-  margin-right: .2rem;
-}
-.cartel-content .legend-item.men .legend-bullet{
-  background: #ffd700;
-}
-.cartel-content .legend-item.women .legend-bullet{
-  background: #4169e1;
-}
-.cartel-content .legend-item em{
-  flex: 1;
-}
-@page{
-  margin: 0;
-}
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -133,16 +23,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -202,16 +90,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -271,16 +157,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -340,16 +224,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -409,16 +291,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -478,16 +358,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -547,16 +425,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -616,16 +492,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -685,16 +559,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -754,16 +626,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -823,16 +693,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -892,16 +760,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -961,16 +827,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1030,16 +894,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1099,16 +961,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1168,16 +1028,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1237,16 +1095,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1306,16 +1162,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1375,16 +1229,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1444,16 +1296,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1513,16 +1363,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1582,16 +1430,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1651,16 +1497,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1720,16 +1564,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1789,16 +1631,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1858,16 +1698,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1927,16 +1765,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -1996,16 +1832,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2065,16 +1899,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2134,16 +1966,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2203,16 +2033,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2272,16 +2100,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2341,16 +2167,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2410,16 +2234,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2479,16 +2301,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2548,16 +2368,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2617,16 +2435,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2686,16 +2502,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2755,16 +2569,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2824,16 +2636,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2893,16 +2703,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -2962,16 +2770,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3031,16 +2837,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3100,16 +2904,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3169,16 +2971,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3238,16 +3038,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3307,16 +3105,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3376,16 +3172,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3445,16 +3239,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3514,16 +3306,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3583,16 +3373,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3652,16 +3440,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3721,16 +3507,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3790,16 +3574,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3859,16 +3641,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3928,16 +3708,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -3997,16 +3775,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -4066,16 +3842,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -4135,16 +3909,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
@@ -4204,16 +3976,14 @@ li{
               </li>
               <li>
                 <span class="legend-item women">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       femmes
-                  </em>
+                  </div>
                 </span>
                 <span class="legend-item men">
-                  <i class="legend-bullet"></i>
-                  <em>
+                  <div>
                       hommes
-                  </em>
+                  </div>
                 </span>
               </li>
           </ul>
