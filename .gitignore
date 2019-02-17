@@ -3,5 +3,5 @@ data/*.json
 __pycache__
 cache.sqlite
 node_modules
-visualisation/figures/*
+visualisations/figures/*
 *.csv
