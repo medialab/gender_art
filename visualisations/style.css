@@ -39,13 +39,13 @@ li{
   flex: 1;
   min-width: 100%;
   max-width: 100%;
-  min-height: 33.333333%;
-  max-height: 33.333334%;
+  min-height: 25%;
+  max-height: 25%;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2.5rem;
   box-sizing: border-box;
 }
 .column:first-of-type .cell{
@@ -63,7 +63,7 @@ li{
 }
 .cartel-content{
   box-sizing: border-box;
-  padding: 5rem;
+  padding: 3.5rem;
   /* padding-left: 0; */
 }
 .cartel-content h1{
