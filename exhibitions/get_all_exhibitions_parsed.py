@@ -128,6 +128,7 @@ def extract_expositions(json, csvwriter):
     # item_list = get_list_from_html(json['expositions'])
     item_list = json['expositions']
     artworks = json['artworks']
+    authors = json['authors']
     for _item in item_list:
         item = _item.replace("\n", " ").replace("  ", " ")
         m = get_expo_title_other(item)
@@ -163,7 +164,7 @@ def extract_expositions(json, csvwriter):
                     else:
                         time = ''
                 if re.search(r'(199[0-9]|20[0-9][0-9])', time) != None:
-                    csvwriter.writerow([item, title, place, museum, town, time, start_date, end_date, artworks])
+                    csvwriter.writerow([item, title, place, museum, town, time, start_date, end_date, artworks, authors])
 
 
 
@@ -175,6 +176,7 @@ def main():
     n = all_artworks.count()
     print("Number of artworks in database:", n)
     all_exhibitions = {}
+    all_authors = {}
     i = 0
     for doc in all_artworks:
         if i % 100000 == 0:
@@ -182,18 +184,21 @@ def main():
         if "expositions" in doc:
             for _exhibition in doc["expositions"]:
                 exhibition = _exhibition.replace("\n", " ").replace("  ", " ")
+                authors = ' | '.join(doc['authors'])
                 if exhibition in all_exhibitions:
                     all_exhibitions[exhibition] += ' | ' + doc["_id"]
+                    all_authors[exhibition] += ' | ' + authors
                 else:
                     all_exhibitions[exhibition] = doc["_id"]
+                    all_authors[exhibition] = authors
         i += 1
-    exhibitions = [{'expositions': [i], 'artworks': all_exhibitions[i]} for i in all_exhibitions]
+    exhibitions = [{'expositions': [i], 'artworks': all_exhibitions[i], 'authors': all_authors[i]} for i in all_exhibitions]
     print("Total number of exhibitions:", len(exhibitions))
     i = 0
     j = 0
-    with open("../data/output.csv", "w", newline='', encoding='utf-8') as f:
+    with open("../data/output_exhibition.csv", "w", newline='', encoding='utf-8') as f:
         writer = csv.writer(f, delimiter=';')
-        writer.writerow(["exhibition", "title", "place", "museum", "town", "time", "start_date", "end_date", "artworks"])
+        writer.writerow(["exhibition", "title", "place", "museum", "town", "time", "start_date", "end_date", "artworks", "authors"])
         for json in exhibitions:
             if i % 10000 == 0:
                 print("Parsing exhibition", i+1,"to", min([i + 10000, n]))
