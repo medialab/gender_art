@@ -6,3 +6,4 @@ node_modules
 visualisations/figures/*
 exhibitions/figures/*
 *.csv
+*.png
